@@ -18,8 +18,8 @@ warnings.filterwarnings("ignore")
 print('\n')
 
 data = pd.read_csv('data/data_v3.csv')
-stats = check_dataset(data)
-'''
+#stats = check_dataset(data)
+
 # drop columns with risk of data leakage/contamination
 col_leak = ['yieldpercol', 'totalprod', 'stocks', 'priceperlb', 'prodvalue']
 data_drop = data.copy()
@@ -47,10 +47,9 @@ xt_i, xv_i = best_imputation(xt_label, xv_label, yt, yv)
 # fixme implementera pipelines
 
 # compare performance of decision tree, random forest and gradient boosting
+print('Mean y train set: ', yt.mean())
+print('Mean y validation set: ', yv.mean())
 model = best_model(xt_i, xv_i, yt, yv)
-print(yv.mean())
 
-
-'''
 
 print('\n')

@@ -34,7 +34,7 @@ def best_model(xt, xv, yt, yv):
 
 	min_mae = min(i['mae'] for i in models)
 	best_model = [m for m in models if m.get('mae') == min_mae]
-	print("\nUsing", best_model[0].get('name'))
+	print("\nBest model pick: ", best_model[0].get('name'))
 	print("\n")
 
 	return best_model[0].get('model')
